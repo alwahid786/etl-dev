@@ -18,7 +18,7 @@ const Dropdown = ({
     setSelected(option);
     setIsOpen(false);
     if (onSelect) onSelect(option);
-    console.log("Selected Option:", option);
+    // console.log("Selected Option:", option);
   };
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Dropdown = ({
         </div>
       </button>
       {isOpen && !readOnly && (
-        <ul className="absolute z-10 w-full h-fit rounded-md shadow-md cursor-pointer border-y mt-1 bg-white">
+        <ul className="absolute z-10 w-full h-fit rounded-md shadow-md cursor-pointer border-y mt-1 bg-white max-h-[150px] overflow-y-auto custom-scroll">
           {options.map((option, i) => (
             <li
               className="py-2 text-sm px-4 border-b hover:bg-[hsl(208,100%,95%)]"
